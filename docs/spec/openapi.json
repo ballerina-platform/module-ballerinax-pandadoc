@@ -2,7 +2,7 @@
   "openapi": "3.0.3",
   "info": {
     "title": "PandaDoc Public API",
-    "description": "PandaDoc API spans a broad range of functionality to help you build incredible documents automation experiences inside your product.\n\nPandaDoc API is organized around REST. Our API has predictable resource-oriented URLs and uses standard HTTP response codes, authentication, and verbs.\n\n## Getting started\n\nYou can start testing PandaDoc API with a sandbox key on our [Enterprise](https://www.pandadoc.com/pricing/) plan, either active or in trial.\n\nGenerate your [sandbox key](https://developers.pandadoc.com/reference/sandbox-key) on the Developer Dashboard with predefined [rate limits](https://developers.pandadoc.com/reference/limits). Or contact our solutions expert if you work with high-transaction volumes.\n\n## Guides\n\nIf you're just getting started with PandaDoc, you may want to jump straight into one of our [getting started guides](https://developers.pandadoc.com/docs/getting-started) for the feature you're most interested in, whether that's:\n\n- [Create from template](https://developers.pandadoc.com/docs/create-send-document),\n- [Upload and send a local PDF](https://developers.pandadoc.com/docs/upload-and-send-a-local-pdf),\n- or [Listening for changes in document status](https://developers.pandadoc.com/docs/listen-document-status-changes).\n\nWe also recommend you to discover our dynamic content generation on a fly: [Create from a template with content placeholder](https://developers.pandadoc.com/docs/create-with-content-placeholders-from-template).\n",
+    "description": "Client for the PandaDoc API. Create, send and track documents, templates, forms and e-signatures.",
     "termsOfService": "https://www.pandadoc.com/master-services-agreement/",
     "contact": {
       "name": "PandaDoc API Support",
@@ -180,7 +180,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "Grant type and credentials used to create or refresh an access token"
         },
         "responses": {
           "200": {
@@ -878,7 +879,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "Document details, recipients, and content used to create a document"
         },
         "responses": {
           "201": {
@@ -954,7 +956,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "List of document IDs to delete in bulk"
         },
         "responses": {
           "200": {
@@ -1042,7 +1045,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "Uploaded file and document creation parameters"
         },
         "responses": {
           "201": {
@@ -1250,7 +1254,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "Document fields to update, such as recipients, tokens, and metadata"
         },
         "responses": {
           "204": {
@@ -1321,7 +1326,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "Auto reminder settings to apply to the document"
         },
         "responses": {
           "200": {
@@ -1676,7 +1682,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "New status to set on the document and optional notification settings"
         },
         "responses": {
           "204": {
@@ -1761,7 +1768,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "Uploaded file and the new document status parameters"
         },
         "responses": {
           "204": {
@@ -2525,7 +2533,8 @@
                 "$ref": "#/components/schemas/DocumentSendRequest"
               }
             }
-          }
+          },
+          "description": "Message, subject, and delivery options used to send the document"
         },
         "responses": {
           "200": {
@@ -2642,7 +2651,8 @@
                 "$ref": "#/components/schemas/EditingSessionRequest"
               }
             }
-          }
+          },
+          "description": "Recipient and lifetime options for the document editing session"
         },
         "responses": {
           "201": {
@@ -2773,7 +2783,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "Recipient and lifetime options for the embedded signing session"
         },
         "responses": {
           "201": {
@@ -3034,7 +3045,8 @@
               "type": "string",
               "default": "-date_created"
             },
-            "example": "-date_created"
+            "example": "-date_created",
+            "description": "Field to sort the results by. Prefix with `-` for descending order"
           },
           {
             "name": "owner_ids",
@@ -3051,7 +3063,8 @@
             "example": [
               "owner1",
               "owner2"
-            ]
+            ],
+            "description": "Return only documents owned by these users"
           }
         ],
         "responses": {
@@ -3193,7 +3206,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "Provider and entity details of the object to link to the document"
         },
         "responses": {
           "201": {
@@ -3401,7 +3415,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "Source URL and name of the attachment to add to the document"
         },
         "responses": {
           "200": {
@@ -3974,7 +3989,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "Fields to create on the document"
         },
         "responses": {
           "200": {
@@ -4237,7 +4253,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "Document settings to update"
         },
         "responses": {
           "200": {
@@ -4292,7 +4309,8 @@
                 "$ref": "#/components/schemas/DocumentTransferOwnershipRequest"
               }
             }
-          }
+          },
+          "description": "New owner of the document"
         },
         "responses": {
           "204": {
@@ -4335,7 +4353,8 @@
                 "$ref": "#/components/schemas/DocumentTransferAllOwnershipRequest"
               }
             }
-          }
+          },
+          "description": "Current and new owners for transferring all documents"
         },
         "responses": {
           "204": {
@@ -4436,7 +4455,8 @@
                 "$ref": "#/components/schemas/AppendCLIDataRequest"
               }
             }
-          }
+          },
+          "description": "Content library item to append to the document and its variables"
         },
         "responses": {
           "201": {
@@ -4571,7 +4591,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "Details of the recipient to add to the document"
         },
         "responses": {
           "200": {
@@ -4744,11 +4765,12 @@
                 }
               }
             }
-          }
+          },
+          "description": "Recipient details to update"
         },
         "responses": {
           "204": {
-            "description": "No content."
+            "description": "No content"
           },
           "400": {
             "$ref": "#/components/responses/400RequestError"
@@ -4817,7 +4839,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "Replacement recipient details for the reassignment"
         },
         "responses": {
           "200": {
@@ -4908,7 +4931,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "Recipients and customization options for the manual reminder"
         },
         "responses": {
           "200": {
@@ -5127,7 +5151,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "Template or file source and options for the new document section"
         },
         "responses": {
           "201": {
@@ -5226,7 +5251,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "Uploaded file and options for the new document section"
         },
         "responses": {
           "201": {
@@ -5582,7 +5608,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "Content library item name and source to create"
         },
         "responses": {
           "201": {
@@ -5664,7 +5691,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "Uploaded file and content library item creation parameters"
         },
         "responses": {
           "201": {
@@ -6626,7 +6654,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "Template name, content source, and roles to create"
         },
         "responses": {
           "201": {
@@ -6699,7 +6728,8 @@
                 "$ref": "#/components/schemas/CreateTemplateWithUploadRequest"
               }
             }
-          }
+          },
+          "description": "Uploaded file and template creation parameters"
         },
         "responses": {
           "201": {
@@ -7202,7 +7232,8 @@
                 "$ref": "#/components/schemas/EditingSessionRequest"
               }
             }
-          }
+          },
+          "description": "Options for the template editing session"
         },
         "responses": {
           "201": {
@@ -7369,7 +7400,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "Template settings to update"
         },
         "responses": {
           "200": {
@@ -7502,7 +7534,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "Sharing settings to apply to the template"
         },
         "responses": {
           "200": {
@@ -7638,7 +7671,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "List of forms",
             "content": {
               "application/json": {
                 "schema": {
@@ -7708,7 +7741,7 @@
         ],
         "responses": {
           "200": {
-            "description": "",
+            "description": "List of documents folders",
             "content": {
               "application/json": {
                 "schema": {
@@ -7765,11 +7798,12 @@
                 }
               }
             }
-          }
+          },
+          "description": "Name and parent of the documents folder to create"
         },
         "responses": {
           "201": {
-            "description": "",
+            "description": "Documents folder created",
             "content": {
               "application/json": {
                 "schema": {
@@ -7834,7 +7868,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "New name of the documents folder"
         },
         "responses": {
           "200": {
@@ -7974,7 +8009,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "Name and parent of the templates folder to create"
         },
         "responses": {
           "201": {
@@ -8043,7 +8079,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "New name of the templates folder"
         },
         "responses": {
           "200": {
@@ -8192,7 +8229,7 @@
     },
     "/public/v2/logs": {
       "get": {
-        "summary": "List API Log",
+        "summary": "List API Log (v2)",
         "description": "Get the list of all logs within the selected workspace.\\ Optionally filter by date, page, and `#` of items per page.",
         "operationId": "listLogsV2",
         "tags": [
@@ -8257,7 +8294,7 @@
     },
     "/public/v2/logs/{id}": {
       "get": {
-        "summary": "API Log Details",
+        "summary": "API Log Details (v2)",
         "description": "Returns details of the specific API log event.",
         "operationId": "detailsLogV2",
         "tags": [
@@ -8438,7 +8475,8 @@
                 "$ref": "#/components/schemas/ContactCreateRequest"
               }
             }
-          }
+          },
+          "description": "Contact details used to create the contact"
         },
         "responses": {
           "201": {
@@ -8632,7 +8670,8 @@
                 "$ref": "#/components/schemas/ContactUpdateRequest"
               }
             }
-          }
+          },
+          "description": "Contact fields to update"
         },
         "responses": {
           "200": {
@@ -8892,7 +8931,8 @@
                 "$ref": "#/components/schemas/CreateMemberTokenRequest"
               }
             }
-          }
+          },
+          "description": "Token creation options for the member"
         },
         "responses": {
           "200": {
@@ -9024,7 +9064,8 @@
                 "$ref": "#/components/schemas/WebhookSubscriptionCreateRequest"
               }
             }
-          }
+          },
+          "description": "Name, endpoint, triggers, and payload options of the webhook subscription"
         },
         "responses": {
           "201": {
@@ -9211,7 +9252,8 @@
                 "$ref": "#/components/schemas/WebhookSubscriptionPatchRequest"
               }
             }
-          }
+          },
+          "description": "Webhook subscription fields to update"
         },
         "responses": {
           "200": {
@@ -9936,7 +9978,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "Document, invitees, and notary details of the notarization request"
         },
         "responses": {
           "201": {
@@ -10260,7 +10303,8 @@
             "schema": {
               "type": "boolean"
             },
-            "example": true
+            "example": true,
+            "description": "Return only items that are not assigned to any category"
           }
         ],
         "responses": {
@@ -10532,7 +10576,8 @@
                 "$ref": "#/components/schemas/ProductCatalogItemRequest"
               }
             }
-          }
+          },
+          "description": "Catalog item details to create"
         },
         "responses": {
           "200": {
@@ -10779,7 +10824,8 @@
                 "$ref": "#/components/schemas/ProductCatalogItemPatchRequest"
               }
             }
-          }
+          },
+          "description": "Catalog item fields to update"
         },
         "responses": {
           "200": {
@@ -11076,7 +11122,8 @@
                 "$ref": "#/components/schemas/QuoteUpdateRequest"
               }
             }
-          }
+          },
+          "description": "Quote data to update on the document"
         },
         "responses": {
           "200": {
@@ -11188,7 +11235,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "List of quote updates to apply in a single batch"
         },
         "responses": {
           "200": {
@@ -11363,7 +11411,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "Name and settings of the workspace to create"
         },
         "responses": {
           "201": {
@@ -11422,7 +11471,8 @@
               "Deactivate workspace": {
                 "value": "BhVzRcxH9Z2LgfPPGXFUBa"
               }
-            }
+            },
+            "description": "ID of the workspace to deactivate"
           }
         ],
         "requestBody": {
@@ -11438,7 +11488,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "Options for deactivating the workspace"
         },
         "responses": {
           "200": {
@@ -11614,7 +11665,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "User and workspace details used to create the user"
         },
         "responses": {
           "201": {
@@ -11741,7 +11793,8 @@
               "type": "string"
             },
             "required": true,
-            "example": "BhVzRcxH9Z2LgfPPGXFUBa"
+            "example": "BhVzRcxH9Z2LgfPPGXFUBa",
+            "description": "ID of the workspace to add the member to"
           },
           {
             "name": "notify_user",
@@ -11778,7 +11831,8 @@
                 "$ref": "#/components/schemas/AddMemberRequest"
               }
             }
-          }
+          },
+          "description": "User and role to add to the workspace"
         },
         "responses": {
           "201": {
@@ -11923,7 +11977,8 @@
                 }
               }
             }
-          }
+          },
+          "description": "New role to assign to the workspace member"
         },
         "responses": {
           "200": {
@@ -12013,7 +12068,8 @@
                 "$ref": "#/components/schemas/CreateApiKeyRequest"
               }
             }
-          }
+          },
+          "description": "Name and options of the API key to create"
         },
         "responses": {
           "200": {
@@ -12872,7 +12928,12 @@
         },
         "properties": {
           "verification_place": {
-            "$ref": "#/components/schemas/RecipientVerificationPlaceEnum"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/RecipientVerificationPlaceEnum"
+              }
+            ],
+            "description": "Point in the signing flow at which the recipient is verified"
           },
           "passcode_verification": {
             "type": "object",
@@ -12913,14 +12974,17 @@
             "properties": {
               "time_limit_sec": {
                 "type": "integer",
+                "description": "Time limit to complete the KBA verification, in seconds.",
                 "example": 120
               },
               "score_threshold": {
                 "type": "integer",
+                "description": "Minimum score required to pass the KBA verification.",
                 "example": 80
               },
               "max_attempts_count": {
                 "type": "integer",
+                "description": "Maximum number of KBA verification attempts allowed.",
                 "example": 2
               }
             }
@@ -12932,6 +12996,7 @@
             "properties": {
               "enabled": {
                 "type": "boolean",
+                "description": "Whether ID verification is enabled for the recipient.",
                 "example": true
               }
             }
@@ -13260,10 +13325,12 @@
             "properties": {
               "email": {
                 "type": "string",
+                "description": "Email address of the owner.",
                 "example": "john.doe@example.com"
               },
               "membership_id": {
                 "type": "string",
+                "description": "Workspace membership ID of the owner.",
                 "example": "QMDSzwabfFzTgjW6KijHyu"
               }
             },
@@ -13396,10 +13463,12 @@
             "properties": {
               "email": {
                 "type": "string",
+                "description": "Email address of the owner.",
                 "example": "john.doe@example.com"
               },
               "membership_id": {
                 "type": "string",
+                "description": "Workspace membership ID of the owner.",
                 "example": "QMDSzwabfFzTgjW6KijHyu"
               }
             },
@@ -14271,31 +14340,46 @@
             "properties": {
               "first_name": {
                 "type": "string",
-                "example": "John"
+                "example": "John",
+                "description": "First name of the recipient"
               },
               "last_name": {
                 "type": "string",
-                "example": "Doe"
+                "example": "Doe",
+                "description": "Last name of the recipient"
               },
               "phone": {
                 "type": "string",
-                "example": "+1234567890"
+                "example": "+1234567890",
+                "description": "Phone number of the recipient"
               },
               "role": {
                 "type": "string",
-                "example": "Role 1"
+                "example": "Role 1",
+                "description": "Role assigned to the recipient"
               },
               "delivery_methods": {
-                "$ref": "#/components/schemas/AssignedToRecipientDeliveryMethods"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/AssignedToRecipientDeliveryMethods"
+                  }
+                ],
+                "description": "Methods used to deliver the document to the recipient"
               },
               "redirect": {
-                "$ref": "#/components/schemas/RecipientRedirectSettings"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/RecipientRedirectSettings"
+                  }
+                ],
+                "description": "Redirect settings applied after the recipient completes the document"
               },
               "type": {
                 "type": "string",
                 "enum": [
                   "recipient"
-                ]
+                ],
+                "description": "Assignee type. Always `recipient` for an individual recipient"
               }
             }
           }
@@ -14312,7 +14396,8 @@
             "properties": {
               "name": {
                 "type": "string",
-                "example": "Group name"
+                "example": "Group name",
+                "description": "Name of the recipient group"
               },
               "members": {
                 "type": "array",
@@ -14338,13 +14423,15 @@
                       "example": "Doe"
                     }
                   }
-                }
+                },
+                "description": "Recipients in the group"
               },
               "type": {
                 "type": "string",
                 "enum": [
                   "recipient_group"
-                ]
+                ],
+                "description": "Assignee type. Always `recipient_group` for a recipient group"
               }
             }
           }
@@ -14458,10 +14545,12 @@
                 "properties": {
                   "name": {
                     "type": "string",
+                    "description": "Name of the collected file.",
                     "example": "example.jpg"
                   },
                   "url": {
                     "type": "string",
+                    "description": "URL of the collected file.",
                     "example": "https://some-url.com/collect_files"
                   }
                 }
@@ -15497,16 +15586,23 @@
         "properties": {
           "id": {
             "type": "string",
-            "example": "7kqXgjFejB2toXxjcC5jfZ"
+            "example": "7kqXgjFejB2toXxjcC5jfZ",
+            "description": "Unique identifier of the recipient"
           },
           "recipient_type": {
-            "$ref": "#/components/schemas/RecipientTypeEnum"
+            "allOf": [
+              {
+                "$ref": "#/components/schemas/RecipientTypeEnum"
+              }
+            ],
+            "description": "Type of the recipient"
           },
           "role": {
             "type": "string",
             "nullable": true,
             "deprecated": true,
-            "example": ""
+            "example": "",
+            "description": "Role assigned to the recipient. Deprecated, use `roles` instead"
           },
           "roles": {
             "type": "array",
@@ -15515,21 +15611,25 @@
             },
             "example": [
               "user"
-            ]
+            ],
+            "description": "Roles assigned to the recipient"
           },
           "signing_order": {
             "type": "integer",
             "minimum": 1,
-            "nullable": true
+            "nullable": true,
+            "description": "Position of the recipient in the signing order"
           },
           "email": {
             "type": "string",
             "nullable": true,
-            "example": "test@test.com"
+            "example": "test@test.com",
+            "description": "Email address of the recipient"
           },
           "has_completed": {
             "type": "boolean",
-            "example": true
+            "example": true,
+            "description": "Whether the recipient has completed the document"
           }
         }
       },
@@ -15614,34 +15714,41 @@
         "properties": {
           "id": {
             "type": "string",
-            "example": "4b011d86-286b-4f86-b697-90a6ad3f1489"
+            "example": "4b011d86-286b-4f86-b697-90a6ad3f1489",
+            "description": "Unique identifier of the group member"
           },
           "first_name": {
             "type": "string",
-            "example": "Jhon"
+            "example": "Jhon",
+            "description": "First name of the group member"
           },
           "last_name": {
             "type": "string",
-            "example": "Dow"
+            "example": "Dow",
+            "description": "Last name of the group member"
           },
           "email": {
             "type": "string",
             "nullable": true,
-            "example": "test@test.com"
+            "example": "test@test.com",
+            "description": "Email address of the group member"
           },
           "shared_link": {
             "type": "string",
-            "example": "https://app.pandadoc.com/document/b7f11ea3c09d1c11208cc122457d4f3a2829d364"
+            "example": "https://app.pandadoc.com/document/b7f11ea3c09d1c11208cc122457d4f3a2829d364",
+            "description": "Link the group member uses to open the document"
           },
           "avatar": {
             "type": "string",
             "nullable": true,
-            "example": "https://pd-live-media.s3.amazonaws.com/users/000GTSGwJw000L2KZqc000/avatar.jpg"
+            "example": "https://pd-live-media.s3.amazonaws.com/users/000GTSGwJw000L2KZqc000/avatar.jpg",
+            "description": "URL of the group member's avatar image"
           },
           "signature_date": {
             "type": "string",
             "nullable": true,
-            "example": "2021-10-23T21:07:04.147345Z"
+            "example": "2021-10-23T21:07:04.147345Z",
+            "description": "Date and time the member signed the document"
           }
         }
       },
@@ -15969,19 +16076,24 @@
             "description": "Document sent by.",
             "properties": {
               "id": {
-                "type": "string"
+                "type": "string",
+                "description": "Unique identifier of the sender."
               },
               "email": {
-                "type": "string"
+                "type": "string",
+                "description": "Email address of the sender."
               },
               "first_name": {
-                "type": "string"
+                "type": "string",
+                "description": "First name of the sender."
               },
               "last_name": {
-                "type": "string"
+                "type": "string",
+                "description": "Last name of the sender."
               },
               "avatar": {
                 "type": "string",
+                "description": "URL of the sender's avatar image.",
                 "nullable": true
               }
             }
@@ -16790,10 +16902,12 @@
             "properties": {
               "offset_x": {
                 "type": "number",
+                "description": "Horizontal offset of the option from the field.",
                 "example": 0
               },
               "offset_y": {
                 "type": "number",
+                "description": "Vertical offset of the option from the field.",
                 "example": 38
               }
             }
@@ -18275,10 +18389,12 @@
             "properties": {
               "membership_id": {
                 "type": "string",
+                "description": "Workspace membership ID of the owner.",
                 "example": "QMDSzwabfFzTgjW6KijHyu"
               },
               "email": {
                 "type": "string",
+                "description": "Email address of the owner.",
                 "format": "email",
                 "example": "john.doe@example.com"
               }
@@ -20895,9 +21011,6 @@
                   "uuid": {
                     "type": "string",
                     "format": "uuid"
-                  },
-                  "pricing_method": {
-                    "type": "number"
                   }
                 }
               }
@@ -20980,9 +21093,6 @@
                           "uuid": {
                             "type": "string",
                             "format": "uuid"
-                          },
-                          "pricing_method": {
-                            "type": "number"
                           }
                         }
                       }
@@ -21234,7 +21344,8 @@
             "nullable": false,
             "additionalProperties": {
               "type": "string"
-            }
+            },
+            "description": "Summary level custom column values, keyed by column name"
           },
           "discounts": {
             "type": "object",
@@ -21387,6 +21498,7 @@
                           },
                           "tiers": {
                             "type": "array",
+                            "description": "Price tiers for volume or tiered pricing.",
                             "items": {
                               "type": "object",
                               "properties": {
@@ -21438,16 +21550,19 @@
                         "properties": {
                           "selected": {
                             "type": "boolean",
+                            "description": "Whether the item is selected.",
                             "nullable": false,
                             "default": true
                           },
                           "qty_editable": {
                             "type": "boolean",
+                            "description": "Whether the recipient can edit the item quantity.",
                             "nullable": false,
                             "default": true
                           },
                           "optional": {
                             "type": "boolean",
+                            "description": "Whether the item is optional for the recipient.",
                             "nullable": false,
                             "default": false
                           }
@@ -21546,14 +21661,21 @@
                   "properties": {
                     "optional": {
                       "type": "boolean",
+                      "description": "Whether the section is optional for the recipient.",
                       "nullable": false
                     },
                     "selected": {
                       "type": "boolean",
+                      "description": "Whether the section is selected.",
                       "nullable": false
                     },
                     "selection_type": {
-                      "$ref": "#/components/schemas/QuoteUpdateRequestSettingsSelectionTypeTypeEnum"
+                      "allOf": [
+                        {
+                          "$ref": "#/components/schemas/QuoteUpdateRequestSettingsSelectionTypeTypeEnum"
+                        }
+                      ],
+                      "description": "How items inside the section can be selected: single, multiple or custom."
                     }
                   },
                   "nullable": false
@@ -21566,7 +21688,12 @@
             "description": "Quote settings. Denotes whether a quote is optional or selected, and selection type inside the section - single, multiple, or custom.",
             "properties": {
               "selection_type": {
-                "$ref": "#/components/schemas/QuoteUpdateRequestSettingsSelectionTypeTypeEnum"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/QuoteUpdateRequestSettingsSelectionTypeTypeEnum"
+                  }
+                ],
+                "description": "How sections inside the quote can be selected: single, multiple or custom."
               }
             },
             "nullable": false
@@ -21661,10 +21788,16 @@
                 "enum": [
                   "ok"
                 ],
-                "example": "ok"
+                "example": "ok",
+                "description": "Result status for this quote. Always `ok`"
               },
               "quote": {
-                "$ref": "#/components/schemas/QuoteResponse"
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/QuoteResponse"
+                  }
+                ],
+                "description": "The updated quote"
               }
             }
           }
@@ -21687,7 +21820,8 @@
                 "enum": [
                   "validation_error"
                 ],
-                "example": "validation_error"
+                "example": "validation_error",
+                "description": "Result status for this quote. Always `validation_error`"
               },
               "description": {
                 "type": "string",
@@ -21715,11 +21849,13 @@
                 "enum": [
                   "not_in_document"
                 ],
-                "example": "not_in_document"
+                "example": "not_in_document",
+                "description": "Result status for this quote. Always `not_in_document`"
               },
               "description": {
                 "type": "string",
-                "example": "Quote is not part of this document."
+                "example": "Quote is not part of this document.",
+                "description": "Human-readable explanation of why the quote is not in the document"
               }
             }
           }
@@ -21742,11 +21878,13 @@
                 "enum": [
                   "not_found"
                 ],
-                "example": "not_found"
+                "example": "not_found",
+                "description": "Result status for this quote. Always `not_found`"
               },
               "description": {
                 "type": "string",
-                "example": "Quote not found."
+                "example": "Quote not found.",
+                "description": "Human-readable explanation of why the quote was not found"
               }
             }
           }
@@ -21769,11 +21907,13 @@
                 "enum": [
                   "conflict"
                 ],
-                "example": "conflict"
+                "example": "conflict",
+                "description": "Result status for this quote. Always `conflict`"
               },
               "description": {
                 "type": "string",
-                "example": "Quote was updated concurrently. Fetch the latest version and retry."
+                "example": "Quote was updated concurrently. Fetch the latest version and retry.",
+                "description": "Human-readable explanation of the conflict"
               }
             }
           }
@@ -21796,11 +21936,13 @@
                 "enum": [
                   "internal_error"
                 ],
-                "example": "internal_error"
+                "example": "internal_error",
+                "description": "Result status for this quote. Always `internal_error`"
               },
               "description": {
                 "type": "string",
-                "example": "An internal error occurred while updating this quote. Try again."
+                "example": "An internal error occurred while updating this quote. Try again.",
+                "description": "Human-readable explanation of the internal error"
               }
             }
           }
@@ -22053,18 +22195,22 @@
             "properties": {
               "email": {
                 "type": "string",
+                "description": "Email address of the user.",
                 "example": "email@example.com"
               },
               "first_name": {
                 "type": "string",
+                "description": "First name of the user.",
                 "example": "John"
               },
               "last_name": {
                 "type": "string",
+                "description": "Last name of the user.",
                 "example": "Doe"
               },
               "phone_number": {
                 "type": "string",
+                "description": "Phone number of the user.",
                 "example": "+14842634627"
               }
             }
@@ -22187,7 +22333,7 @@
           "user_id": {
             "type": "string",
             "example": "2eWSKSvVqmuVCnuUK3iWwD",
-            "description": "User id."
+            "description": "User id"
           },
           "role": {
             "$ref": "#/components/schemas/WorkspaceMemberRoleEnum"
