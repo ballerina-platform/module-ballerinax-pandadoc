@@ -1,6 +1,6 @@
 # Webhook subscription setup
 
-This example makes sure a PandaDoc webhook subscription exists. It looks for a subscription by name, creates it for document state changes and recipient completion when it is missing, reads it back, and optionally deletes it.
+This example makes sure a PandaDoc webhook subscription exists. It looks for a subscription by name, updates it when its URL, triggers or status differ from the requested ones, creates it for document state changes and recipient completion when it is missing, reads it back, and optionally deletes it.
 
 ## Prerequisites
 
@@ -17,9 +17,10 @@ apiKey = "<api-key>"
 webhookName = "<subscription-name>"
 webhookUrl = "<https-endpoint-that-receives-events>"
 deleteAfterCheck = false
+deleteExisting = false
 ```
 
-Set `deleteAfterCheck` to `true` to remove the subscription at the end of the run.
+Set `deleteAfterCheck` to `true` to remove a subscription this run created. To also remove a subscription that already existed, set `deleteExisting` to `true` as well.
 
 ## Run the example
 
