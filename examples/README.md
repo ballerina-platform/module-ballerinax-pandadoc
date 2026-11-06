@@ -2,13 +2,21 @@
 
 The `ballerinax/pandadoc` connector provides practical examples illustrating usage in various scenarios.
 
-[//]: # (TODO: Add examples)
-1. 
-2. 
+1. **[Contract send workflow](https://github.com/ballerina-platform/module-ballerinax-pandadoc/tree/main/examples/contract_send_workflow)** - Create a document from a template, wait until it is ready, optionally send it for signature and read back its details.
+
+2. **[Webhook subscription setup](https://github.com/ballerina-platform/module-ballerinax-pandadoc/tree/main/examples/webhook_subscription_setup)** - Make sure a webhook subscription exists, read it back and optionally remove it.
 
 ## Prerequisites
 
-[//]: # (TODO: Add prerequisites)
+1. Generate a PandaDoc API key to authenticate the connector as described in the [Setup guide](https://central.ballerina.io/ballerinax/pandadoc/latest#setup-guide).
+
+2. For each example, create a `Config.toml` file with the related configuration. Here's an example of how your Config.toml file should look:
+
+```toml
+apiKey = "<api-key>"
+```
+
+Each example lists the additional values it needs in its own README.
 
 ## Running an example
 
